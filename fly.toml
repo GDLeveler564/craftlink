@@ -1,21 +1,20 @@
-# fly.toml app configuration file generated for craftlink on 2026-11-21T01:38:45Z
+# fly.toml app configuration file generated for craftlink on 2026-11-21T01:51:31Z
 #
 # See https://docs.fly.io/reference/configuration for information about how to use this file.
 #
 
 app = 'craftlink'
-primary_region = 'iad'
+primary_region = 'gru'
 
-[build]
 [http_service]
-  internal_port = 7331
-  force_https = true
-  auto_stop_machines = 'stop'
   auto_start_machines = true
+  auto_stop_machines = true
+  force_https = true
+  internal_port = 7331
   min_machines_running = 0
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+  memory = '1gb'
